@@ -38,10 +38,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_local_notifications: df98d66e515e1ca797af436137b4459b160ad8c9
-  patrol: 3e21d514020dbee24b3e3383caac9e8e051292ac
-  permission_handler_apple: 9878588469a2b0d0fc1e048d9f43605f92e6cec2
-  url_launcher_ios: 5334b05cef931de560670eeae103fd3e431ac3fe
+  flutter_local_notifications: 395056b3175ba4f08480a7c5de30cd36d69827e4
+  patrol: 0b1c45cf52cccba3b059ec6483f3a4d5c493314b
+  permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
+  url_launcher_ios: 694010445543906933d732453a59da0a173ae33d
 
 PODFILE CHECKSUM: 9be812acb45cb190b75d9f04feed7ec9e9658fdf
 
