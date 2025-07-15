@@ -22,7 +22,10 @@ class FibonacciPageTestInjector implements TestInjector {
       expect($('Don\'t have result').visible, isTrue);
 
       // Вводим число 20.
-      await $.enterText($(FibonacciPageKeys.textField), '20');
+      await $.enterText(
+        $(FibonacciPageKeys.textField),
+        '20',
+      );
 
       // Вычисляем результат.
       await $('Calculate').tap();
@@ -31,7 +34,10 @@ class FibonacciPageTestInjector implements TestInjector {
       expect($('Result: 6765').visible, isTrue);
 
       // Вводим число 10.
-      await $.enterText($(FibonacciPageKeys.textField), '10');
+      await $.enterText(
+        $(FibonacciPageKeys.textField),
+        '10',
+      );
 
       // Вычисляем результат.
       await $('Calculate').tap();

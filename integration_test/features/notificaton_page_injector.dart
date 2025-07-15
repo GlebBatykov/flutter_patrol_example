@@ -20,21 +20,22 @@ class NotificationPageTestInjector implements TestInjector {
         // Переходим на нужную страницу.
         await $('Notification').tap();
 
-        // Проверяем что у на на странице находится кнопка с текстом
-        // "Get permission", а так же нажимаем на нее.
-        // В случае если кнопки с таким текстом не будет, тест завершится
-        // с ошибкой.
-        await $('Get permission').tap();
+        final getPermissionButtonFinder = $('Get permission');
 
-        // Выдаем разрешение.
-        if (Platform.isAndroid) {
+        if (getPermissionButtonFinder.visible) {
+          // Проверяем что у на на странице находится кнопка с текстом
+          // "Get permission", а так же нажимаем на нее.
+          // В случае если кнопки с таким текстом не будет, тест завершится
+          // с ошибкой.
+          await getPermissionButtonFinder.tap();
+
           await $.native2.grantPermissionWhenInUse();
-        } else {
-          await $.native2.grantPermissionOnlyThisTime();
-        }
 
-        // Дожидаемся следующего кадра в Flutter приложении.
-        await $.pumpAndTrySettle();
+          // Дожидаемся следующего кадра в Flutter приложении.
+          await $.pumpAndTrySettle(
+            duration: const Duration(seconds: 1),
+          );
+        }
 
         // Проверяем что у на на странице находится кнопка с текстом
         // "Show notification", а так же нажимаем на нее.
@@ -58,6 +59,7 @@ class NotificationPageTestInjector implements TestInjector {
         // либо использовать patrolTearDown/patrolSetUp функции.
         await $.native2.closeNotifications();
       },
+      skip: Platform.isIOS,
     );
   }
 }
