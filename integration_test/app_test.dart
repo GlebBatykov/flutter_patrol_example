@@ -15,7 +15,7 @@ void main() {
   });
 
   patrolTest('Test fibonacci page', (tester) async {
-    // Подготоваливаем приложение.
+    // Подготавливаем приложение.
     await tester.pumpWidgetAndSettle(const App());
 
     // Переходим на нужную страницу.
